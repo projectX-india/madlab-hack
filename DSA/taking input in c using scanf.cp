@@ -6,12 +6,16 @@
 #define endl "\n"
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
-#include<string.h>
+#include <stdio.h>
 
 int main()
 {
-    //write code here
-    
-    
+    int a, b, c;
+    printf("Enter the first value:");
+    scanf("%d", &a);
+    printf("Enter the second value:");
+    scanf("%d", &b);
+    c = a + b;
+    printf("%d + %d = %d\n", a, b, c);
     return 0;
 }
