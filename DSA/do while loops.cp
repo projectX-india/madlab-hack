@@ -6,12 +6,15 @@
 #define endl "\n"
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
-#include<string.h>
-
+#include<stdio.h>
+#include<conio.h>
 int main()
 {
-    //write code here
-    
-    
-    return 0;
+	int num=1;	//initializing the variable
+	do	//do-while loop 
+	{
+		printf("%d\n",2*num);
+		num++;		//incrementing operation
+	}while(num<=20);
+	return 0;
 }
