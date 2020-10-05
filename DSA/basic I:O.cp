@@ -6,12 +6,10 @@
 #define endl "\n"
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
-#include<string.h>
-
+#include <stdio.h>    
 int main()
-{
-    //write code here
-    
-    
+{ 
+    // Displays the string inside quotations
+    printf("you can type anything here. ");
     return 0;
 }
