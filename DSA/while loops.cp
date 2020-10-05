@@ -10,7 +10,11 @@ using namespace std;
 
 int main()
 {
-    //write code here
+    int t=10;
+    while(t--)
+    {
+        cout<<"hello\n";
+    }
     
     
     return 0;
