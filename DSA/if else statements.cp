@@ -6,10 +6,10 @@
 #define endl "\n"
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
-#include<string.h>
+// Program to display a number if it is negative
 
-int main()
-{
+#include <stdio.h>
+int main() {
     int number;
 
     printf("Enter an integer: ");
@@ -20,6 +20,7 @@ int main()
         printf("You entered %d.\n", number);
     }
 
-    printf("The if statement is easy.");    
+    printf("The if statement is easy.");
+
     return 0;
 }
