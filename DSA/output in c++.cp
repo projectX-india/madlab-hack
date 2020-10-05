@@ -6,12 +6,20 @@
 #define endl "\n"
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
-#include<string.h>
-
-int main()
-{
-    //write code here
-    
-    
-    return 0;
-}
+#include<iostream> 
+  
+using namespace std;    
+  
+class Test 
+{ 
+  static int i; 
+  int j; 
+}; 
+  
+int Test::i; 
+  
+int main() 
+{ 
+    cout << sizeof(Test); 
+    return 0; 
+} 
