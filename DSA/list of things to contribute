@@ -1,0 +1,50 @@
+READ FIRST
+1. all the topics listed below have empty files in the repo. Any one who is contributing can edit those files and make a pull request. 
+the files would be named as say "linked list algo" and look for those files to edit and make PR's on.
+2. any empty pull request or not working pull request will NOT be accepted.
+3. this repo is for the students of THAPAR INSTITUTE OF ENGINEERING AND TECHNOLOGY, DERABASSI CAMPUS but anyone who wants to contribute is welcomed.
+4. after you make a pull request, edit this file and add a DONE after the file number that you changed for everyones reference.
+
+
+files you can contribute to-
+
+1. implementation of linked list
+2. implementation of basic array data structure
+3. implementation of vector data structure
+4. implementation of maps data structure
+5. implementation of bubble sort
+6. implementation of insertion sort
+7. implementation of binary search
+8. implementation of linear search
+9. implementation of segment trees
+10.implementation of DFS
+11.implementation of BFS
+12.implementation of stacks
+13.implementation of queues
+14.implementation of basic I/O
+15.implementation of fast I/O
+16.implementation of hello world
+17.implementation of strings I/O
+18.implementation of sum of two integers
+19.implementation of void functions
+20.implementation of return type functions
+21.implementation of for loops
+22.implementation of while loop
+23.implementation of do while loop
+24.implementation of switch statement
+25.implementation of if else statements
+26.implementation of cascading in c++
+27.implementation of fall through in c++
+28.implementation of basic graph
+29.implementation of fenwick tree
+30.implementation of knapsack problem
+31.implementation of basic recursion
+32.implementation of factorial in recursion
+33.implementation of fibonacci in recursion
+34.difference of two integers
+35.basic calculator
+36.output in c++
+37.input using scanf
+38.output using printf
+39.euclideans gcd algo
+40.sieve of erontheses 
