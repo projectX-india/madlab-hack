@@ -10,6 +10,13 @@ using namespace std;
 
 int main()
 {
+
+    int a=5,b=4;
+    int x=a-b;
+    printf("%d",x);
+    
+    
+
     int a,b;
     int diff;
  
@@ -25,6 +32,7 @@ int main()
         diff=b-a;
  
     printf("\nDifference between %d and %d is = %d",a,b,diff);
+
 
     return 0;
 }
