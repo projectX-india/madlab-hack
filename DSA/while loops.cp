@@ -10,6 +10,14 @@ using namespace std;
 
 int main()
 {
+
+    //Contributed by Arjun Dhawan
+    int i=1;
+    while(i=1){
+        printf("number in i is : %d",d);
+    i++;}
+    
+
     int i;
     cin>>i;
     while(i--){
@@ -20,6 +28,7 @@ int main()
     else
         printf("Noooo");
     }
+
 
     return 0;
 }
