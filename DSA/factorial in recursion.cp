@@ -8,10 +8,18 @@
 using namespace std;
 #include<string.h>
 
-int main()
-{
-    //write code here
-    
-    
+int fact(int num){
+	if(num==0)
+		return 1;
+	else if(num>0)
+		return num * fact(num-1);
+		
+}
+
+int main(){
+	cout << "Enter the num:- " << endl;
+	int num;
+	cin >> num;
+	cout << "Factorial of the num:- " << fact(num) << endl;
     return 0;
 }

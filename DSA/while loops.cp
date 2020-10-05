@@ -10,12 +10,16 @@ using namespace std;
 
 int main()
 {
-    int t=10;
-    while(t--)
+    int i;
+    cin>>i;
+    while(i--){
+    if(i==3)
     {
-        cout<<"hello\n";
+        printf("I am a fresher");
     }
-    
-    
+    else
+        printf("Noooo");
+    }
+
     return 0;
 }
