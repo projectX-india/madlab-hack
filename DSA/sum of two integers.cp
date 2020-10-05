@@ -11,6 +11,13 @@ using namespace std;
 int main()
 {
     //write code here
+    float a,b,sum;
+    printf("Enter the first number : ");
+    scanf("%f", &a);
+    printf("Enter the second number : ");
+    scanf("%f", &b);
+    sum=a+b;
+    printf("The sum of two numbers is : %f", sum);
     
     
     return 0;
