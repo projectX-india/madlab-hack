@@ -10,13 +10,11 @@ using namespace std;
 
 int main()
 {
-    //write code here
-    if(i==3)
-    {
-        printf("I am a fresher");
-    }
-    else
-        printf("Noooo");
+    //Contributed by Arjun Dhawan
+    int i=1;
+    while(i=1){
+        printf("number in i is : %d",d);
+    i++;}
     
     return 0;
 }
