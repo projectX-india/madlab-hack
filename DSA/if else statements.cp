@@ -10,8 +10,16 @@ using namespace std;
 
 int main()
 {
-    //write code here
-    
-    
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    // true if number is less than 0
+    if (number < 0) {
+        printf("You entered %d.\n", number);
+    }
+
+    printf("The if statement is easy.");    
     return 0;
 }
