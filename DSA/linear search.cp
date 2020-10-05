@@ -11,7 +11,20 @@ using namespace std;
 int main()
 {
     //write code here
-    
-    
+    int n,i,num;
+	cout << "Enter the number of items in list" << endl; 
+	cin >> n;
+	int arr[n];
+	for(i=0;i<n;i++)
+		cin >> arr[i];
+		
+	cout << "Enter the num to search for:- ";
+	cin >> num;
+	
+	bool b=false;
+	for (i = 0;i<n;i++)
+		if(num == arr[i])
+			b = true;
+	cout << ((b) ? "Found" : "Not Found");
     return 0;
 }
