@@ -10,8 +10,7 @@ using namespace std;
 
 int main()
 {
-    //write code here
-    
-    
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
     return 0;
 }
