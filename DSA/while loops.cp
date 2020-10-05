@@ -11,7 +11,12 @@ using namespace std;
 int main()
 {
     //write code here
-    
+    if(i==3)
+    {
+        printf("I am a fresher");
+    }
+    else
+        printf("Noooo");
     
     return 0;
 }
