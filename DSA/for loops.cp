@@ -9,9 +9,13 @@ using namespace std;
 #include<string.h>
 
 int main()
-{
-    //write code here
-    
-    
+{ //write code here
+    int n;
+    cout<<"Enter number whose table you want to print";
+    cin>>n;
+    for(int i=1;i<11;i++)
+    {
+        cout<<i<<"*"<<n<<"="<<i*n;
+    }
     return 0;
 }
