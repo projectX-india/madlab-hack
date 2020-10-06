@@ -16,11 +16,18 @@ int main() {
     scanf("%d", &number);
 
     // true if number is less than 0
-    if (number < 0) {
-        printf("You entered %d.\n", number);
+    if (number < 0) 
+    {
+        printf("You entered a positive integer %d.\n", number);
     }
 
-    printf("The if statement is easy.");
+    else if(number == 0)
+        
+       printf("You entered 0");
+    
+    else
+        
+        printf("You entered a negative integer");
 
     return 0;
 }
