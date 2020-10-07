@@ -10,24 +10,24 @@ using namespace std;
 
 #include <stdio.h>
 int main() {
-    int number;
+    int age;
 
-    printf("Enter an integer: ");
-    scanf("%d", &number);
+    printf("Enter your age : ");
+    scanf("%d", &age);
 
-    // true if number is less than 0
-    if (number < 0) 
+   
+    if (age< 18) 
     {
-        printf("You entered a positive integer %d.\n", number);
+        printf("You are a minor and cannot vote.\n");
     }
 
-    else if(number == 0)
+    else if(age >= 25)
         
-       printf("You entered 0");
+       printf("You can either stand for elections or you can vote");
     
     else
         
-        printf("You entered a negative integer");
+        printf("You can vote");
 
     return 0;
 }
