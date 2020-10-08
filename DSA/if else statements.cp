@@ -8,26 +8,18 @@
 using namespace std;
 // Program to display a number if it is negative
 
-#include <stdio.h>
-int main() {
-    int age;
-
-    printf("Enter your age : ");
-    scanf("%d", &age);
-
-   
-    if (age< 18) 
+int main()
+{
+    int a;
+    cout<<"Enter any number(positive or negative):";
+    cin>>a;
+    if(a<0)
     {
-        printf("You are a minor and cannot vote.\n");
+        cout<<"It is a negative number.";
     }
-
-    else if(age >= 25)
-        
-       printf("You can either stand for elections or you can vote");
-    
     else
-        
-        printf("You can vote");
-
+    {
+        cout<<"It is a positive number.";
+    }
     return 0;
 }
