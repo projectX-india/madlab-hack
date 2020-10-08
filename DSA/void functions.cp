@@ -8,10 +8,15 @@
 using namespace std;
 #include<string.h>
 
+void printmessage()
+{
+    cout<<"/nThis is a void function. It does not return any value.";
+}
 int main()
 {
     //write code here
-    
-    
+    cout<<"Using void function./n";
+    printmessage();
+       
     return 0;
 }
