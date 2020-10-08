@@ -12,9 +12,18 @@ int main()
 {
     //write code here
     char name[20];
-    printf("Enter your name\n");
-    scanf("%s",&name);
-    printf("Your name is%s:",name);
+    char college[50];
+    char branch[30];
+    cout<<"\nEnter your name";
+    gets(name);
+    cout<<"\nEnter your college:";
+    gets(college);
+    cout<<"\nEnter your branch:";
+    gets(branch);
+    cout<<"The details are\n";
+    cout<<"\n Name:"<<name;
+    cout<<"\n College:"<<college;
+    cout<<"\n Branch:"<<branch;
     
     return 0;
 }
