@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+ 
 int bsearch(int arr[],int nn,int mm,int xx){
     while(nn<=mm){
         int mid=(nn+(mm-1))/2;
@@ -19,6 +19,26 @@ int ar[]={2,3,4,5,6};
     printf("ENTER NUMBER TO BE SEARCHED \n ");
     int x;
     scanf("%d",&x);
+    int first = 0;
+    int last=m-1; 
+    int mid = (first + last)/2;  
+    while( first <= last ){  
+        if ( numArray[mid] < key ){  
+            first = mid + 1;     
+        }
+	else if ( numArray[mid] == key ){ 
+           printf("Element is at index: " + mid);  
+            break;  
+        }
+	else{  
+            last = mid - 1;  
+        }  
+        mid = (first + last)/2;  
+   }  
+   if ( first > last ){  
+      printf("Element not found!");  
+   } 
+	
     int res=bsearch(ar,n,m-1,x);
         if(res==-1)
             printf("not found in array \n ");
