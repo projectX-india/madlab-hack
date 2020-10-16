@@ -8,6 +8,153 @@
 using namespace std;
 #include<string.h>
 
+
+using namespace std;
+
+class Node{
+	public:
+		int data;
+		Node* next;
+	Node(int a){
+		this->data=a;
+		next=NULL;
+	}
+};
+
+Node* head=NULL;
+Node* tail=NULL;
+std::unordered_map<int,Node*>arr;
+bool con;
+
+
+int main(){
+	int n;
+	cin>>n;
+	con=false;
+	for(int i=0;i<n;i++){
+		char ch;
+		cin>>ch;
+		if(ch=='I'){
+			int i;
+			cin>>i;
+			if(i==0){
+				int x;
+				cin>>x;
+				Node* newN=new Node(x);
+				arr[x]=newN;
+				if(head==NULL){
+					head=newN;
+					tail=newN;
+				}
+				else{
+					tail->next=newN;
+					tail=tail->next;
+				}
+			}
+			else if(i==1){
+				int y,x;
+				cin>>y>>x;
+				Node* a=head;
+				Node* prev=NULL;
+				while(a!=NULL){
+					if(a->data==y){
+						Node* newN=new Node(x);
+						arr[x]=newN;
+						if(a->next==NULL)
+							tail=newN;
+						newN->next=a->next;
+						a->next=newN;
+						break;
+					}
+					else if(a->data==x){
+						Node* newN=new Node(y);
+						arr[y]=newN;
+						if(prev==NULL)
+							head=newN;
+							
+						else 
+							prev->next=newN;
+							
+						newN->next=a;
+						break;
+					}
+					else{
+						prev=a;
+						a=a->next;
+					}
+				}
+			}
+			else if(i==2){
+				int z,y,x;
+				cin>>z>>y>>x;
+				Node* newN=new Node(x);
+				arr[x]=newN;
+				Node* a=head;
+				while(a->data!=z)
+					a=a->next;
+				int count=0;
+				Node* a2=a;
+				while(a2->data!=y){
+					a2=a2->next;
+					count=count+1;	
+				}
+				count=(count+1)/2;
+				int i=1;
+				while(i<count){
+					a=a->next;
+					i=i+1;
+				}
+				newN->next=a->next;
+				a->next=newN;
+			}
+		}
+		else if(ch=='U'){
+			int x,p;
+			cin>>x>>p;
+			Node* a;
+			for(auto start:arr){
+				if(start.first==x){
+					a=start.second;
+					break;
+				}
+			}
+			Node* latest=a;
+			Node* prev=NULL;
+			int check=0;
+			while(a!=NULL){
+				if(check==p){
+					latest->next=a;
+					break;
+				}
+				check++;
+				prev=a;
+				a=a->next;
+			}
+			if(a==NULL){
+				con=true;
+				prev->next=head;
+				a=head;
+				while(a!=NULL){
+					if(check==p){
+						lastest->next=a;
+						break;
+					}
+					check++;
+					prev=a;
+					a=a->next;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+
+
+
+
+
+
 struct node{
     int data;
     node* link;
