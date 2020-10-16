@@ -11,7 +11,17 @@ using namespace std;
 int main()
 {
     //write code here
-    
-    
+    int n;
+    cout<<"enter the size of array:";
+    cin>>n;
+    int array[n];
+    int arr;
+    for(int i=0;i<n;i++){
+        cin>>arr;
+        array[i]=arr;
+    }
+    for(int j=0j<n;j++){
+        printf("%d ",array[i]);
+    }
     return 0;
 }
