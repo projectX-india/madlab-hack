@@ -12,12 +12,12 @@ int main()
 {
     //write code here
     float a,b,sum;
-    printf("Enter the first number : ");
+    printf("Enter the first number : \n");
     scanf("%f", &a);
-    printf("Enter the second number : ");
+    printf("Enter the second number : \n");
     scanf("%f", &b);
     sum=a+b;
-    printf("The sum of two numbers is : %f", sum);
+    printf("The sum of two numbers a and b is : %f", sum);
     
     
     return 0;
