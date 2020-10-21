@@ -15,11 +15,11 @@ int main()
     cin>>a;
     if(a<0)
     {
-        cout<<"It is a negative number.";
+        cout<<"The given number is a negative number.";
     }
     else
     {
-        cout<<"It is a positive number.";
+        cout<<"The given number is a positive number.";
     }
     return 0;
 }
