@@ -20,10 +20,10 @@ int main()
     scanf("%d",&b);
  
     // check condition to identify which is largest number
-    if( a>b )
-        diff=a-b;
-    else
-        diff=b-a;
+    if( a>b ){
+        diff=a-b}
+    else{
+        diff=b-a}
  
     printf("\nDifference between %d and %d is = %d",a,b,diff);
     return 0;
