@@ -12,6 +12,7 @@ int main()
 {
    // printf() displays the string inside quotation
    printf("Hello, World!\n");
+   printf("This is Hacktoberfest 2020!\n");
    printf("Hello World!!");
    fprintf(stdout,"%s","Hello World!");
     return 0;
