@@ -9,6 +9,7 @@ Task:
 */
 
 int main(){
+    int aa=10;
 
 
     return 0;
