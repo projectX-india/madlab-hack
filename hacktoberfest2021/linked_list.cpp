@@ -1,70 +1,60 @@
 #include<iostream>
-#include<list>
 using namespace std;
-
 
 /*
 Task:
 1. implement a linked list and print it
 */
 
-int main(){
-    list<int> linkedList;
-    for (int i = 0; i < 5; i++)
-    {
-        int element;
-        cout << "Enter an element to add to the Linked List : ";
-        cin >> element;
-        linkedList.push_back(element);
-    }
-    cout << "The linked list is :- ";
-    for (auto &it : linkedList)
-    {
-        cout << it << ' ';
-    }
-
-
-
-
-class Node {
-public:
+class node
+{
+    public:
     int data;
-    Node* next;
+    node* next;
 };
- 
-// This function prints contents of linked list
-// starting from the given node
-void printList(Node* n)
-{
-    while (n != NULL) {
-        cout << n->data << " ";
-        n = n->next;
-    }
-}
- 
-// Driver code
-int main()
-{
-    Node* head = NULL;
-    Node* second = NULL;
-    Node* third = NULL;
- 
-    // allocate 3 nodes in the heap
-    head = new Node();
-    second = new Node();
-    third = new Node();
- 
-    head->data = 1; // assign data in first node
-    head->next = second; // Link first node with second
- 
-    second->data = 2; // assign data to second node
-    second->next = third;
- 
-    third->data = 3; // assign data to third node
-    third->next = NULL;
- 
-    printList(head);
- 
+node*head=NULL;
 
+node* insertion(node* head,int data)
+{
+    node* nnode=new node;
+    nnode->data=data;
+    node*temp=head;
+    if(head==NULL)
+    {
+        head=nnode;
+        nnode->next=NULL;
+    }
+    else
+    {
+        while(temp->next!=NULL)
+        temp=temp->next;
+        temp->next=nnode;
+        nnode->next=NULL;
+    }
+    return head;
+}
+
+node* display(node*head)
+{
+    node* temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+    return head;
+}
+
+        
+
+int main(){
+    head=insertion(head,10);
+    head=insertion(head,60);
+    head=insertion(head,20);
+    head=insertion(head,40);
+    head=insertion(head,50);
+    head=insertion(head,30);
+    head=display(head);
     return 0;
 }
