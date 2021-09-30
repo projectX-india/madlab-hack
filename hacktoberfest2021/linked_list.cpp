@@ -1,3 +1,13 @@
+
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main()
+{
+    list<int> linkedList;
+    for (int i = 0; i < 5; i++)
+
 #include<iostream>
 using namespace std;
 
@@ -20,6 +30,7 @@ node* insertion(node* head,int data)
     nnode->data=data;
     node*temp=head;
     if(head==NULL)
+
     {
         head=nnode;
         nnode->next=NULL;
@@ -33,6 +44,7 @@ node* insertion(node* head,int data)
     }
     return head;
 }
+
 
 node* display(node*head)
 {
@@ -56,5 +68,6 @@ int main(){
     head=insertion(head,50);
     head=insertion(head,30);
     head=display(head);
+
     return 0;
 }
