@@ -14,6 +14,7 @@
 
 Happy Hacktober! :octocat: This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
 
+![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberlogo.png)
 
 <p>&nbsp;</p>
 
