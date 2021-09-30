@@ -8,7 +8,7 @@ Task:
 */
 
 int main(){
-
+    priority_queue<int> pq;
 
     return 0;
 }
