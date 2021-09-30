@@ -10,7 +10,7 @@ Task:
 */
 
 int main(){
-
-
+    int z=10;
+    cout<<pow(z,2);
     return 0;
 }
