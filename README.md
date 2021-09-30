@@ -10,17 +10,18 @@
 
 <p>&nbsp;</p>
 
-#Hacktoberfest 2021 
+# Hacktoberfest 2021 
 
 Happy Hacktober! :octocat: This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
 
+
 <p>&nbsp;</p>
 
-##Instructions: 
-###1. register yourself on the link below with your github ID 
+## Instructions: 
+### 1. register yourself on the link below with your github ID 
 ###### Link to register: https://hacktoberfest.digitalocean.com/
-###2. open the folder named hacktoberfest2021 and solve the challenges
-###3. The PR will be reviewed & congratulations you made your first pull Request.
+### 2. open the folder named hacktoberfest2021 and solve the challenges
+### 3. The PR will be reviewed & congratulations you made your first pull Request.
 
 
 
