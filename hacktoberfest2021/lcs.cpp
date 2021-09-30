@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 int LCS(string str1, string str2)
 {
   int length1 = str1.size();
@@ -27,6 +29,14 @@ int LCS(string str1, string str2)
 		}
 	}
    return dp[length1][lenght2];
+}
+int main()    
+{
+	string str1, str2;
+	cin >> str1;
+	cin >> str2;
+	cout << "LCS of " << str1 << " and " << str2 << " is " << LCS(str1, str2) << endl;
+	return 0;
 }
 int main()    
 {
