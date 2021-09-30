@@ -10,7 +10,11 @@ Task:
 */
 
 int main(){
+
+    int aa=10;
+=======
     int n = 10;
+
 
     // 1. implement a vector in c++
     vector <int> v;
