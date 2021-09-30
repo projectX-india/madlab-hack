@@ -1,0 +1,1 @@
+int Solution::solve(vector<int> &A) { int n=A.size(),ans=INT_MIN; if(n<3){ return 0; } for(int i=1;i<n-1;++i){ int m1=INT_MIN,m2=INT_MIN; for(int j=0;j<i;++j){ if(A[j]<A[i]){ m1=max(m1,A[j]); } } for(int j=i+1;j<n;++j){ if(A[j]>A[i]){ m2=max(m2,A[j]); } } ans=max(ans,m1+A[i]+m2); } return ans; }
