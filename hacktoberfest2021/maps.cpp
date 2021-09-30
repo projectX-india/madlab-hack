@@ -9,7 +9,6 @@ Task:
 */
 
 int main(){
-
-
+    map<int,int> mp;
     return 0;
 }
