@@ -8,9 +8,13 @@
 2. PR will be accepted if the code implements the given problem statement.
 3. File name contains outline of problem & a more detailed overview for the question is given in comments inside the file.
 
+<p>&nbsp;</p>
+
 #Hacktoberfest 2021 
 
 Happy Hacktober! :octocat: This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
+
+<p>&nbsp;</p>
 
 ##Instructions: 
 ###1. register yourself on the link below with your github ID 
