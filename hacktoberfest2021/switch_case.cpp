@@ -1,26 +1,44 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
+
+/*
+Task:
+1. implement switch case in c++
+*/
 
 int main()
 {
-    int choice;
-    cout << "Enter your choice : ";
-    cin >> choice;
-    switch (choice)
-    {
+int n;
+  cout<<"Enter any number between(1-7):";
+  cin>>n;
+  switch(n)
+  {
     case 1:
-        cout << "You entered 1";
-        break;
+      cout<<"Monday"<<endl;
+      break;
     case 2:
-        cout << "You entered 2";
-        break;
+      cout<<"Tuesday"<<endl;
+      break;
     case 3:
-        cout << "You entered 3";
-        break;
+      cout<<"Wednesday"<<endl;
+      break;
+    case 4:
+      cout<<"Thursday"<<endl;
+      break;
+    case 5:
+      cout<<"Friday"<<endl;
+      break;
+    case 6:
+      cout<<"Saturday"<<endl;
+      break;
+    case 7:
+      cout<<"Sunday"<<endl;
+      break;
     default:
-        break;
-    }
+      cout<<"Invalid input"<<endl;
+      break;
+  }
+  
 
     return 0;
 }
