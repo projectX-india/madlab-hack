@@ -1,0 +1,26 @@
+class Solution {
+public:
+    
+    int maxArea(vector<int>& height) {
+        int n=height.size();
+        int p1=0, p2=n-1;
+        int maxvol=0;
+        while(p1<p2){
+            maxvol=max(maxvol,abs(p1-p2)*min(height[p1],height[p2]));
+            if(height[p1]>height[p2]){
+                int temp=height[p2];
+                p2-=1;
+                while(p1<p2 && height[p2]<=temp)p2--;
+            }
+            else{
+                int temp=height[p1];
+                p1+=1;
+                while(p1<p2 && height[p1]<=temp)p1++;
+            }
+                
+        }
+
+        return maxvol;
+        
+    }
+};
