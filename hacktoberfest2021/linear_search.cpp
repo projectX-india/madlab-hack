@@ -7,43 +7,17 @@ Task:
 1. 
 */
 
-int linear_search(vector<int> arr, int k){
-
-    int left = 0;
-    int length = arr.size();
-    int position = -1;
-      int right = length - 1;
-       
-    // Run loop from 0 to right
-    for(left = 0; left <= right;)
+int linear_search(vector<int> arr, int k)
+{
+    int pos = 0;
+    for (auto &it : arr)
     {
-         
-        // If search_element is found with
-        // left variable
-        if (arr[left] == search_Element)
+        if (it == k)
         {
-             
-            position = left;
-            cout << "Element found in Array at "
-                 << position + 1 << " Position with "
-                 << left + 1 << " Attempt";
-                
-            break;
+            return pos;
         }
-       
-        // If search_element is found with
-        // right variable
-        if (arr[right] == search_Element)
-        {
-            position = right;
-            cout << "Element found in Array at "
-                 << position + 1 << " Position with "
-                 << length - right << " Attempt";
-                
-            break;
-        }
-        left++;
-        right--;
+        pos++;
+    }
 }
 int main(){
     vector<int> arr;
