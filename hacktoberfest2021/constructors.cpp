@@ -38,11 +38,10 @@ class student{
 
 int main(){
     student ob1("Abhay");
-	student ob2("madlab-hack");
+	  student ob2("madlab-hack");
     cout << ob1.getName() << endl;
 
     student ob3 = ob2;
-
     cout << ob3.getName() << endl;
 
     return 0;

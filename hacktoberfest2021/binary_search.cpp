@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//declaring node class
 class node{
 public:
 	int data;
@@ -14,6 +14,7 @@ public:
 	}
 };
 
+//function to insert in BST
 node* insertInBST(node* root, int d)
 {
 	if(root == NULL)
@@ -26,7 +27,7 @@ node* insertInBST(node* root, int d)
 
 	return root;
 }
-
+//buyilding BST
 node* buildBST()
 {
 	int d;
