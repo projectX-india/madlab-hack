@@ -11,6 +11,9 @@ Task:
 */
 
 int main(){
+
+    map<int,int> mp;
+
     map<int, int> gquiz1;
     // insert elements in random order
     gquiz1.insert(pair<int, int>(1, 40));
@@ -35,5 +38,6 @@ int main(){
     }
     cout << endl;
     
+
     return 0;
 }
