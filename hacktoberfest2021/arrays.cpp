@@ -24,7 +24,7 @@ signed main(){
     
     // task-1 declaration of array
     int arr[n];
-
+    int arr2[n+1];
     // task-2 initialization of array
     for(int i=0; i<n; i++)
         arr[i] = 0;
