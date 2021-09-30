@@ -17,11 +17,11 @@ Happy Hacktober! :octocat: This is a beginner friendly repository made specifica
 
 <p>&nbsp;</p>
 
-## Instructions: 
-### 1. register yourself on the link below with your github ID 
-###### Link to register: https://hacktoberfest.digitalocean.com/
-### 2. open the folder named hacktoberfest2021 and solve the challenges
-### 3. The PR will be reviewed & congratulations you made your first pull Request.
+# Instructions: 
+ 1. register yourself on the link below with your github ID 
+##### Link to register: https://hacktoberfest.digitalocean.com/
+ 2. open the folder named hacktoberfest2021 and solve the challenges
+ 3. The PR will be reviewed & congratulations you made your first pull Request.
 
 
 
