@@ -16,12 +16,12 @@ Happy Hacktober! :octocat: This is a beginner friendly repository made specifica
 
 ![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberlogo.png)
 
-# Instructions: 
+### Instructions
 1. register yourself on the link below with your github ID at https://hacktoberfest.digitalocean.com/
 2. open the folder named hacktoberfest2021 and solve the challenges
 3. The PR will be reviewed & congratulations you made your first pull Request.
 
-# refer below on how to make your first Pull Request
+### refer below on how to make your first Pull Request
 1. https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
 2. https://opensource.com/article/19/7/create-pull-request-github
 3. https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
