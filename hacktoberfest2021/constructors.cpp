@@ -9,40 +9,43 @@ Task:
 4. implement copy constructor
 */
 
-class student{
+class student
+{
+	int rollno,marks;
 	public:
-    // Default Constructor
-    student(){
-        setName("No Name");
-    }
-
-    // Parameterized Constructor
-	student(string nm) {
-		setName(nm);
+	student()
+	{
+		rollno=1;
+		marks=0;
 	}
-
-    // Copy constructor
-    student(const student &st){
-        name = st.name;
-    }
-
-	void setName(string x) {
-		name = x;
+	student(int rn,int m)
+	{
+		rollno=rn;
+		marks=m;
 	}
-	string getName() {
-		return name;
+	student(student &s)
+	{
+		rollno=s.rollno;
+		marks=s.marks;
 	}
-	private:
-		string name;
+	
+	void display()
+	{
+		cout<<"Roll no:"<<rollno<<endl;
+		cout<<"Marks:"<<marks<<endl;
+	}
 };
 
 int main(){
-    student ob1("Abhay");
-	  student ob2("madlab-hack");
-    cout << ob1.getName() << endl;
-
-    student ob3 = ob2;
-    cout << ob3.getName() << endl;
+    student s1;
+    student s2(20,98);
+	student s3(s2);
+	s1.display();
+	s2.display();
+	s3.display();
+	
 
     return 0;
 }
+
+
