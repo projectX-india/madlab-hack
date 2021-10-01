@@ -7,6 +7,7 @@ void bubbleSort(int arr[], int n)
     {
         for (int j = 0; j < n - i - 1; j++)
         {
+            //last i elements are already in place 
             if (arr[j] > arr[j + 1])
             {
                 int temp = arr[j];
@@ -16,6 +17,16 @@ void bubbleSort(int arr[], int n)
         }
     }
 }
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+
 int main()
 {
     int arr[10] = {}, n, key;
