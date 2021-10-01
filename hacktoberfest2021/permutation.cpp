@@ -1,23 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-void permutation(string s, string ans)
-{
-    if(s.length()==0)
-    {
-        cout<<ans<<endl;
-        return;
+void recurpermute(int index,vector<int> &nums,vector<vector<int>> &ans){
+    if(index==nums.size()){
+        ans.push_back(nums);
+        return ;
     }
-
-    for(int i=0; i<s.length(); i++)
-    {
-        char ch=s[i];
-        string ros=s.substr(0,i)+s.substr(i+1);
-        permutation(ros,ans+ch);
+    for(int i=index;i<nums.size();i++){
+        swap(nums[index],nums[i]);
+        recurpermute(index+1,nums,ans);
+        swap(nums[index],nums[i]);
     }
-    
 }
-int main()
-{
-    permutation("ABC","");
+int main(){
+    int n; 
+    cin>>n;
+    vector<int>nums;
+    for(int i=1;i<=n;i++){
+        int c;
+        cin>>c;
+        nums.push_back(c);
+    }
+    vector<vector<int>> ans;
+    int z=-1;
+    recurpermute(0,nums,ans);
+
+cout<<"permutations :<<endl;
+for(int i=0;i<ans.size();i++){
+    for(int j=0;j<ans[i].size();j++){
+        cout<<ans[i][j]<<" ";
+    }
+    cout<<endl;
 }
+
+
+    return 0;
+    }
