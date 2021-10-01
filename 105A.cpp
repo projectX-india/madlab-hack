@@ -51,6 +51,10 @@ bool checkcker(char s[], ll len){
             }
         }
     }
+    // for(int i=0;i<n;i++)
+    // return i;
+    //if(res = 0)
+    //return;
     if(checker.size()!=0){
         return false;
     }
