@@ -1,4 +1,5 @@
 #include<iostream>
+#include<conio.h>
 using namespace std;
 
 /*
@@ -7,36 +8,34 @@ Task:
 2. data types - name, rollno, age
 3. it should contain a function to print student details
 */
-
-#include<iostream.h>
-#include<fstream.h>
-#include<conio.h>
 class student
 {
-int rno;
-char name[20];
-int age;
-public:
-void get()
-{
-cout<<“\nEnter data: Roll no Name Marks\n”;
-cin>>rno>>name>>age;
-}
-void disp()
-{
-cout<<“\nRoll no\tName\tMarks\n”;
-cout<<“=============================\n”;
-cout<<rno<<“\t”<<name<<“\t”<<age<<endl;
-}
+  int rollno,age;
+  char name[20];
+  public:
+  void get_data()
+  {
+    cout<<"Enter roll no:";
+    cin>>rollno;
+    cout<<"Enter age:";
+    cin>>age;
+    cout<<"Enter Name:";
+    cin>>name;
+  }
+  void display()
+  {
+    cout<<"Details are:"<<endl;
+    cout<<"Roll no:"<<rollno<<endl;
+    cout<<"Age:"<<age<<endl;
+    cout<<"Name:"<<name<<endl;
+  }
 };
-void main()
+int main()
 {
-fstream f;
-f.open(“school.dat”,ios::in|ios::out);
-student s;
-s.get();
-f.write((char*)&s,sizeof(s));
-while(f.read((char*)&s,sizeof(s)));
-s.disp();
-getch();
+  student s;
+  s.get_data();
+  s.display();
+  return 0;
 }
+
+    

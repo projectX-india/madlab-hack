@@ -1,29 +1,31 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
 using namespace std;
-
-/*
-Task:
-1. 
-*/
-
-int linear_search(vector<int> arr, int k)
-{
-    int pos = 0;
-    for (auto &it : arr)
-    {
-        if (it == k)
-        {
-            return pos;
+ 
+int linearSearch(int arr[], int n, int x) {
+    for (int i = 0; i < n; i++){
+        if (arr[i] == x){
+            return i;
         }
-        pos++;
     }
+    return -1;
 }
-int main(){
-    vector<int> arr;
-    arr.push_back(1);arr.push_back(3);arr.push_back(2);arr.push_back(5);
-    
-    cout<<linear_search(arr, 3)<<endl;
-    
+
+int main() {
+    int n,x;
+    cin >> n >> x;
+
+    int arr[n];
+
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+    }
+   
+    int result = linearSearch(arr, n, x);
+    if(result == -1){
+        cout << "Element is not present in array" << endl;
+    }
+    else{
+        cout << "Element is present at index " << result << endl;
+    }
     return 0;
 }
