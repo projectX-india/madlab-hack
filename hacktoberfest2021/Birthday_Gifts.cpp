@@ -36,7 +36,11 @@ signed main()
 #endif
     int t = 1;
     cin >> t;
-    while (t--)
+    bool aa=false;
+    while (t--){
+        aa=!aa;
         solve();
+    }
+        
     return 0;
 }

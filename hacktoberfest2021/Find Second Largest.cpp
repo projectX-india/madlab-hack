@@ -10,6 +10,7 @@ int main(){
         A.push_back(temp);
     }
     sort(A.begin(),A.end());
+    sort(A.begin(),A.end());
     cout<<A[1]<<endl;
     return 0;
 }

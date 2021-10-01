@@ -29,8 +29,9 @@ ll calc(vi a, vi b){
     ll m = b.size();
     vi su(n+1);
     ll r = 0;
+    bool aa=true;
     for(ll i=0;i<n+1;++i){
-        
+        aa=!aa;
     }
     for(int i=0;i<n+1;i++){
         cout<<su[i]<<" ";
