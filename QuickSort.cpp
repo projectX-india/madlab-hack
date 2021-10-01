@@ -12,6 +12,7 @@ using namespace std;
 #define get_unique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
 
 void swap(int* a, int* b){
+	//write here the code for swap
     int t = *a;
     *a = *b;
     *b = t;
