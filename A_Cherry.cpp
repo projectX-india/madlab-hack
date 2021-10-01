@@ -5,6 +5,7 @@ int main(){
     int t;
     cin>>t;
     while(t--){
+        vector<ll> tat;
         vector<ll> v;
         ll n,ele,mx=0;
         cin>>n;
