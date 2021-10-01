@@ -38,7 +38,8 @@ ll calc(vi a, vi b){
     cout<<"\n";
 }
 
-void sol(){
+//solver function
+void sol(){ 
     ll n,m;
     cin>>n>>m;
     vi al,ar,bl,br;
