@@ -54,6 +54,7 @@ void merge(int array[], int const left, int const mid, int const right)
 // begin is for left index and end is
 // right index of the sub-array
 // of arr to be sorted */
+//we have to sort this according to the merge sort conditions
 void mergeSort(int array[], int const begin, int const end)
 {
     if (begin >= end)
