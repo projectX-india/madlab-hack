@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// BIPAARTITE GRAPHS ARE Instances when you can divide a set into sets which are disjoint amongs themselves
 vector<bool> vis;
 int n,m;
 vector<vector<int>> adjl;
