@@ -1,67 +1,60 @@
 #include <iostream>
 using namespace std;
-
-struct Node {
-    int value;
-    struct Node* next;
-    Node(int data)
-    {
-        this->value = data;
-        next = NULL;
-    }
+class Node{
+	public:
+		int data;
+		Node *next;
+		Node(int data){
+			this->data=data;
+			next=NULL;
+		}
 };
+Node* takeinput(){
+	int data;
+	cin>>data;
+	Node *head=NULL;
+	while(data!=-1){
 
-//reversing a linked list
-Node* reverse(Node* head)
-{
-    Node* curr = head; //current node
-    Node *prev = NULL; //previous mode
-    Node* next = NULL; //following node
-
-    while (curr != NULL)
-    {
-        next = curr->next;
-
-        //reverse the links
-        curr->next = prev;
-
-        //iterate further
-        prev = curr;
-        curr = next;
-    }
-    return prev;
+Node *newNode=new Node(data);
+if(head==NULL){
+		head=newNode;
 }
-
-void print(Node* head)
-{
-    while (head != NULL)
-    {
-        cout << head->value << " ";
-        head = head->next;
-    }
+else{
+ Node *temp=head;
+ while(temp->next!=NULL){
+ 	temp=temp->next;
+ }
+	temp->next=newNode;
 }
-
-Node* add_data(Node* head, int data)
-{
-    Node* new_node = new Node(data);
-    new_node->next = head;
-    return new_node;
+	cin>>data;	
+	}
+	return head;
 }
+void print(Node *head){
 
-
-int main()
-{
-    //create nodes
-    Node* head = new Node(20);
-    head = add_data(head, 4);
-    head = add_data(head, 15);
-    head = add_data(head, 22);
-    
-    cout << "Given linked list\n";
-    print(head);
-
-    head = reverse(head);
-    cout << "\nReversed Linked list \n";
-    print(head);
-    return 0;
+		while(head!=NULL){
+		cout<<head->data<<" ";
+		head=head->next;
+	}
+}
+Node *reverse(Node *head){
+	Node *prevptr=NULL;
+	Node *currptr=head;
+	Node *nextptr;
+	while(currptr!=NULL){
+		nextptr=currptr->next;
+		currptr->next=prevptr;
+		prevptr=currptr;
+		currptr=nextptr;
+	}
+	return prevptr;
+}
+int main(){
+	Node *head=takeinput();
+	print(head);
+	cout<<"original linked list:"<<endl;
+ Node *h=reverse(head);
+    cout<<"reversed linked list:"<<endl;
+ 	print(h);
+	return 0;
 }
