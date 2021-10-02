@@ -16,58 +16,48 @@ Task:
 1. implement a linked list and print it
 */
 
-class node
+class linked_list
 {
     public:
     int data;
-    node* next;
+    linked_list *next;
 };
-node*head=NULL;
 
-node* insertion(node* head,int data)
+linked_list *insert_at_beginning(linked_list *head , int x)
 {
-    node* nnode=new node;
-    nnode->data=data;
-    node*temp=head;
+    linked_list *nn = new linked_list;
+    nn->data = x;
+    nn->next = NULL;
     if(head==NULL)
-
     {
-        head=nnode;
-        nnode->next=NULL;
+        head = nn;
     }
     else
     {
-        while(temp->next!=NULL)
-        temp=temp->next;
-        temp->next=nnode;
-        nnode->next=NULL;
+        nn->next = head;
+        head = nn;
     }
     return head;
 }
-
-
-node* display(node*head)
+    
+void display(linked_list *head)
 {
-    node* temp=head;
-    while(temp!=NULL)
+    linked_list *ptr = head;
+    while(ptr!=NULL)
     {
-        cout<<temp->data<<" ";
-        temp=temp->next;
+        cout<<ptr->data<<" ";
+        ptr = ptr->next;
     }
-    cout<<endl;
-    return head;
 }
-
-        
-
-int main(){
-    head=insertion(head,10);
-    head=insertion(head,60);
-    head=insertion(head,20);
-    head=insertion(head,40);
-    head=insertion(head,50);
-    head=insertion(head,30);
-    head=display(head);
-
+    
+int main()
+{
+    linked_list *first = NULL;
+    first = insert_at_beginning(fisrt , 10);
+    first = insert_at_beginning(fisrt , 20);
+    first = insert_at_beginning(fisrt , 30);
+    first = insert_at_beginning(fisrt , 50);
+    first = insert_at_beginning(fisrt , 60);
+    display(first);
     return 0;
 }
