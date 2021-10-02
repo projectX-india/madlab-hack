@@ -27,17 +27,15 @@ int main(){
 
 
     // 1. implement a vector in c++
-    vector <int> v;
+    vector <char> v;
 
     //2. initialize the vector with values
-    for(int i=1; i<=n; i++)
-        v.push_back(i);
-
+    vector <int> v1{2,4,5,6};
     //3. iterate over the vector using the auto keyword
-    for(auto it:v)
-        cout << it << " ";
-    cout << endl;
-
+    for(auto i: v1)
+    {
+        cout<<i<<" ";
+    }
 
     return 0;
 }
