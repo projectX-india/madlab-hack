@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+#define size 100
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
@@ -16,7 +16,7 @@ vector<string> split(const string &);
  *  3. INTEGER m
  */
 
-int birthday(vector<int> s, int d, int m) {
+int birthday(int s[size], int d, int m) {
     int sum=0,ans=0;
    for(int i=0;i<(s.size()-m-1);i++){
     for(int j=i;j<(i+m);j++){
