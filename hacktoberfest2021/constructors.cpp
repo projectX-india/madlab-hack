@@ -15,18 +15,17 @@ class student
 	public:
 	student()
 	{
-		rollno=1;
-		marks=0;
+		cout<<"Default Constructor"<<endl;
 	}
-	student(int rn,int m)
+	student(int r, int m)
 	{
-		rollno=rn;
-		marks=m;
+		rollno = r;
+		marks = m;
 	}
-	student(student &s)
+	student(&s1)
 	{
-		rollno=s.rollno;
-		marks=s.marks;
+		rollno = s1.rollno;
+		marks = s1.marks;
 	}
 	
 	void display()
