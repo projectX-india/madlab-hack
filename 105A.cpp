@@ -60,7 +60,7 @@ bool checkcker(char s[], ll len){
     }
     return true;
 }
-
+//solver function
 void sol(){
     string s;
     cin>>s;
