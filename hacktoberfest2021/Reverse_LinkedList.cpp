@@ -1,62 +1,63 @@
-#include <iostream>     
+#include<bits/stdc++.h>
+#include<iostream>
+
 using namespace std;
-class node
+
+class linked_list
 {
     public:
     int data;
-    node *next;
+    linked_list *next;
 };
-node *head , *temp , *newnode , *prev , *cnode , *nextnode;
-void display()    // display of the linked list
+
+void display(linked_list *head)
 {
-    cout<<"The linked list is "<<endl;
-    temp  = head;
-    while(temp!=0)
+    linked_list *temp = head;
+    while (temp!=NULL)
     {
-        cout<<temp->data;
+        cout<<temp->data<<"->";
         temp = temp->next;
     }
     cout<<endl;
 }
 
-void reverse()             // reverse the linked list
+linked_list *insertNode(linked_list *head, int num)
 {
-    node *prev;
-    prev = 0;
-    cnode = nextnode = head;
-    while(nextnode!=0)
+    linked_list *new_node = new linked_list;
+    new_node->data = num;
+    new_node->next = head;
+    head = new_node;
+    return head;
+}
+
+linked_list *reverse(linked_list *head)
+{
+    linked_list *prev = NULL;
+    linked_list *next = NULL;
+    linked_list *current = head;
+    while (current!=NULL)
     {
-        nextnode = nextnode->next;
-        cnode->next = prev;
-        prev = cnode;
-        cnode = nextnode;
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
     }
     head = prev;
-    display();
+    return head;
 }
+
 int main()
 {
-    head = 0;
-    int c = 1;
-    while(c)
-    {
-        newnode = new node;
-        cout<<"Enter the data to enter in the linked list"<<endl;
-        cin>>newnode->data;
-        newnode->next = 0;
-        if(head == 0)
-        {
-            temp = head = newnode;
-        }
-        else
-        {
-            temp->next = newnode;
-            temp = newnode;
-        }
-        cout<<"Do you want to enter more data"<<endl;
-        cin>>c;
-    }
-    
-    display();
-    reverse();
+    linked_list *first = NULL;
+    first = insertNode(first,6); 
+    first = insertNode(first , 8);
+    first = insertNode(first , 90);
+    first = insertNode(first , 67);
+    first = insertNode(first , 89);
+    display(first);
+    first = reverse(first);
+    display(first);
+    return 0;
 }
+    
+
