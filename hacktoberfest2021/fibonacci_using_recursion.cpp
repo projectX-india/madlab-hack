@@ -6,17 +6,24 @@ Task:
 1. WAP tp print fibonacci series till n using recursion
 */
 
-int recursion(int n)
+int fib(int n)
 {
     if (n <= 1)
-        return 1;
-    return recursion(n - 1) + recursion(n - 2);
+    {
+        return n;
+    }
+    else
+    {
+        return fib(n - 1) + fib(n - 2);
+    }
 }
+
 int main()
 {
-    int n;
-    cin >> n;
-    cout << recursion(n);
-
+    int num, f;
+    cout << "Enter the number" << endl;
+    cin >> num;
+    f = fib(num);
+    cout << f << endl;
     return 0;
 }
