@@ -5,47 +5,69 @@ using namespace std;
 
 //switch-case example
 
-void playgame()
+void IAB()
 {
-    cout << "Play game called";
+    cout<<"Insertion At the Beginning"<<endl;
 }
-void loadgame()
+
+void IAE()
 {
-    cout << "Load game called";
+    cout<<"Insertion At the End"<<endl;
 }
-void playmultiplayer()
+
+void IAI()
 {
-    cout << "Play multiplayer game called";
+    cout<<"Insertion At the Index"<<endl;
 }
-     
+void DAB()
+{
+    cout<<"Deletion At the Beginning"<<endl;
+}
+void DAE()
+{
+    cout<<"Deletion At the End"<<endl;
+}
+void DAI()
+{
+    cout<<"Deletion At the Index"<<endl;
+}
+
 int main()
 {
-  int input;
-   
-  cout<<"1. Play game\n";
-  cout<<"2. Load game\n";
-  cout<<"3. Play multiplayer\n";
-  cout<<"4. Exit\n";
-  cout<<"Selection: ";
-  cin>> input;
-  switch ( input ) {
-  case 1:            
-    playgame();
-    break;
-  case 2:            
-    loadgame();
-    break;
-  case 3:            
-    playmultiplayer();
-    break;
-  case 4:            
-    cout<<"Thank you for playing!\n";
-    break;
-  default:            
-    cout<<"Error, bad input, quitting\n";
-    break;
-  }
-  cin.get();
-  
-  return 0;
+    int ch;
+    string c = "y";
+    while (c=="y")
+    {
+       cout<<"1. IAB\n2. IAE\n3. IAI\n4.DEB\n5.DAE\n6.DAI\n";
+       cout<<"Enter your choice"<<endl;
+       cin>>ch;
+       switch (ch)
+       {
+       case 1:
+           IAB();
+           break;
+       case 2:
+           IAE();
+           break;
+       case 3:
+           IAI();
+           break;
+       case 4:
+           DAB();
+           break;
+       case 5:
+           DAE();
+           break;
+       case 6:
+           DAI();
+           break;
+       default:
+           cout<<"Wrong choice"<<endl;
+           break;
+       }
+       cout<<"Do you want to continue(y/n)"<<endl;
+       cin>>c;
+    }
+    
+    return 0;
 }
