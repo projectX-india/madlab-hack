@@ -1,15 +1,21 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-int pairingfriends(int n)
+int dp[1000];
+int countFriendsPairings(int n)
 {
-    if(n==0 || n==1 || n==2){
-        return n;
-    }
-    return pairingfriends(n-1) + pairingfriends(n-2)*(n-1);
+    if (dp[n] != -1)
+        return dp[n];
+ 
+    if (n > 2)
+        return dp[n] = countFriendsPairings(n - 1) + (n - 1) * countFriendsPairings(n - 2);
+    else
+        return dp[n] = n;
 }
-
+ 
 int main()
 {
-    cout<<pairingfriends(4);
+    memset(dp, -1, sizeof(dp));
+    int n = 4;
+    cout << countFriendsPairings(n) << endl;
+    
 }
