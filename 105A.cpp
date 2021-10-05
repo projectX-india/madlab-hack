@@ -35,7 +35,7 @@ typedef long double  ld;
 
 
 bool checkcker(char s[], ll len){
-    // checker functon
+    //checker functon
     if(s[0]==s[len-1]){
         return false;
     }
@@ -51,7 +51,7 @@ bool checkcker(char s[], ll len){
             }
         }
     }
-    // for(int i=0;i<n;i++)
+    // for(int i=0;i<n;i++) 
     // return i;
     //if(res = 0)
     //return;
