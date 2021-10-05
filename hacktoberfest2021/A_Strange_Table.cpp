@@ -1,26 +1,33 @@
 #include <bits/stdc++.h>
-#define ll long long
-#define endl "\n"
-#define MOD 1000000007
-#define speed                \
-    ios::sync_with_stdio(0); \
-    cin.tie(0);              \
-    cout.tie(0);
 using namespace std;
-
-void solve()
-{
-    ll n, m, x;
-    cin >> n >> m >> x;
-    cout << ((x - 1) % n) * m + ((x - 1) / n) + 1 << endl;
-}
-
+#define ll long long
+#define mod 1000000007
 int main()
 {
-    speed;
-    ll t;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll int t;
     cin >> t;
     while (t--)
-        solve();
+    {
+        unsigned ll int a, i, j, a[100002], count = 0, flag = 0, b, x, h, ans;
+        string s;
+        vector<ll int> vect;
+        cin >> a >> b >> x;
+        h = x % a;
+        if (h == 0)
+            h = a;
+        ans = (h - 1) * b;
+        count = h;
+        for (i = h;; i += a)
+        {
+            ans++;
+            if (count == x)
+                break;
+            count += a;
+        }
+        cout << ans << endl;
+    }
     return 0;
 }
