@@ -1,73 +1,86 @@
 #include <bits/stdc++.h>
-#define ll long long
-#define endl "\n"
-#define MOD 1000000007
-#define speed                \
-    ios::sync_with_stdio(0); \
-    cin.tie(0);              \
-    cout.tie(0);
 using namespace std;
-
-void solve()
-{
-    ll r, c, x;
-    cin >> r >> c >> x;
-    ll a[r][c], b[r][c];
-    for (ll i = 0; i < r; i++)
-        for (ll j = 0; j < c; j++)
-            cin >> a[i][j];
-    for (ll i = 0; i < r; i++)
-    {
-        for (ll j = 0; j < c; j++)
-        {
-            cin >> b[i][j];
-            b[i][j] = a[i][j] - b[i][j];
-        }
-    }
-    for (ll i = 0; i < r; i++)
-    {
-        for (ll j = 0; j <= c - x; j++)
-        {
-            if (b[i][j] != 0)
-            {
-                for (ll k = 1; k < x; k++)
-                    b[i][j + k] = b[i][j + k] - b[i][j];
-                b[i][j] = 0;
-            }
-        }
-    }
-    for (ll i = 0; i <= r - x; i++)
-    {
-        for (ll j = 0; j < c; j++)
-        {
-            if (b[i][j] != 0)
-            {
-                for (ll k = 1; k < x; k++)
-                    b[i + k][j] = b[i + k][j] - b[i][j];
-                b[i][j] = 0;
-            }
-        }
-    }
-    for (ll i = 0; i < r; i++)
-    {
-        for (ll j = 0; j < c; j++)
-        {
-            if (b[i][j] != 0)
-            {
-                cout << "No" << endl;
-                return;
-            }
-        }
-    }
-    cout << "Yes" << endl;
-}
-
-int main()
-{
-    speed;
-    ll t;
-    cin >> t;
-    while (t--)
-        solve();
-    return 0;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int r,c,x;
+		cin>>r>>c>>x;
+		int a[r][c], b[r][c];
+		int suma=0,sumb=0;
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				cin>>a[i][j];
+				suma+=a[i][j];
+			}
+		}
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				cin>>b[i][j];
+				sumb+=b[i][j];
+			}
+		}
+		if(x==2 && 0){
+			int pathsum=0;
+			for(int i=0;i<r;i++){
+				for(int j=0;j<c;j++){
+					int mul;
+					if((r-i+c-j)%2==0) mul=-1;
+					else mul=1;
+					if(!(i==r-1 && j==c-1)) pathsum+=mul*(a[i][j]-b[i][j]);
+				}
+			}
+			if(a[r-1][c-1]-pathsum==b[r-1][c-1])  cout<<"Yes"<<endl;
+			else cout<<"No"<<endl;
+		}
+		else{
+			int darray[r][c];
+			for(int i=0;i<r;i++){
+				for(int j=0;j<c;j++){
+					darray[i][j]=b[i][j]-a[i][j];
+				}
+			}
+			for(int j=0;j<c;j++){
+				int toadd=0;
+				int tempaddidx=r-x;
+				while(tempaddidx>=0){
+					toadd += darray[tempaddidx][j];
+					tempaddidx -= x;
+				}
+				for(int i=r-1;i>r-x;i--){
+					int temp=i-x;
+					while(temp>=0){
+						darray[i][j] += darray[temp][j];
+						temp=temp-x;
+					}
+					darray[i][j] -= toadd;
+				}
+			}
+			for(int i=r-1;i>r-x;i--){
+				int toadd=0;
+				int tempaddidx=c-x;
+				while(tempaddidx>=0){
+					toadd += darray[i][tempaddidx];
+					tempaddidx -= x;
+				}
+				for(int j=c-1;j>c-x;j--){
+					int temp=j-x;
+					while(temp>=0){
+						darray[i][j] += darray[i][temp];
+						temp=temp-x;
+					}
+					darray[i][j] -= toadd;
+				}
+			}
+			bool valid=1;
+			for(int i=r-1;i>r-x;i--){
+				for(int j=c-1;j>c-x;j--){
+					if(darray[i][j]!=0) valid=0;
+				}
+			}
+			if(!valid) cout<<"No"<<endl;
+			else cout<<"Yes"<<endl;
+		}
+	}
+	return 0;
 }
