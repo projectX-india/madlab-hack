@@ -1,40 +1,32 @@
-#include <bits/stdc++.h>
-#define int long long
-#define endl "\n"
-#define PI 3.141592653589793238
-#define MOD 1000000007
-#define f(i, a, b) for (int i = a; i <= b; i++)
-#define rf(i, a, b) for (int i = a; i >= b; i--)
-#define FastIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#include<bits/stdc++.h>
 using namespace std;
-
-void solve()
-{
-    int n, count = 0;
-    cin >> n;
-    char s[n];
-    cin >> s;
-    f(i, 0, n - 1)
-    {
-        if (s[i] == '0')
-            count++;
-    }
-    if (count % 2 == 0 or count == 1)
-        cout << "BOB" << endl;
-    else
-        cout << "ALICE" << endl;
-}
-
-signed main()
-{
-    FastIO;
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    int t = 1;
-    cin >> t;
-    while (t--)
-        solve();
-    return 0;
-}
+int main (){
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+		int sum=0;
+		bool flag=true;
+		char a[1000];
+		cin>>a;
+		for(int i=0;i<n/2;i++){
+             if(a[i]!=a[n-1-i])
+			 {
+			 	flag=false;
+			 	break;
+						 }			
+		}
+		for(int i=0;i<n;i++){
+			if(a[i]=='0')sum++;
+		}
+		if(flag){
+			if(sum%2==0||sum==1)cout<<"BOB"<<endl;
+			    else cout<<"ALICE"<<endl;
+		}
+		else{
+		if(n%2==1&&sum==2&&a[n/2]=='0'){cout<<"DRAW"<<endl;}
+		else cout<<"ALICE"<<endl;}
+	}
+	return 0;
+} 
