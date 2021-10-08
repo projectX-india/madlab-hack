@@ -1,63 +1,69 @@
-#include<bits/stdc++.h>
-#include<iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-class linked_list
+struct Node
 {
-    public:
     int data;
-    linked_list *next;
+    struct Node *next;
 };
 
-void display(linked_list *head)
+void reverseUtil(Node *curr, Node *prev, Node **head);
+void reverse(Node **head)
 {
-    linked_list *temp = head;
-    while (temp!=NULL)
+    if (!head)
+        return;
+    reverseUtil(*head, NULL, head);
+}
+void reverseUtil(Node *curr, Node *prev, Node **head)
+{
+
+    if (!curr->next)
     {
-        cout<<temp->data<<"->";
-        temp = temp->next;
+        *head = curr;
+
+        curr->next = prev;
+        return;
     }
-    cout<<endl;
+
+    Node *next = curr->next;
+
+    curr->next = prev;
+
+    reverseUtil(next, curr, head);
 }
 
-linked_list *insertNode(linked_list *head, int num)
+Node *newNode(int key)
 {
-    linked_list *new_node = new linked_list;
-    new_node->data = num;
-    new_node->next = head;
-    head = new_node;
-    return head;
+    Node *temp = new Node;
+    temp->data = key;
+    temp->next = NULL;
+    return temp;
 }
 
-linked_list *reverse(linked_list *head)
+void printlist(Node *head)
 {
-    linked_list *prev = NULL;
-    linked_list *next = NULL;
-    linked_list *current = head;
-    while (current!=NULL)
+    while (head != NULL)
     {
-        next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
+        cout << head->data << " ";
+        head = head->next;
     }
-    head = prev;
-    return head;
+    cout << endl;
 }
 
 int main()
 {
-    linked_list *first = NULL;
-    first = insertNode(first,6); 
-    first = insertNode(first , 8);
-    first = insertNode(first , 90);
-    first = insertNode(first , 67);
-    first = insertNode(first , 89);
-    display(first);
-    first = reverse(first);
-    display(first);
+    Node *head1 = newNode(1);
+    head1->next = newNode(2);
+    head1->next->next = newNode(3);
+    head1->next->next->next = newNode(4);
+    head1->next->next->next->next = newNode(5);
+    head1->next->next->next->next->next = newNode(6);
+    head1->next->next->next->next->next->next = newNode(7);
+    head1->next->next->next->next->next->next->next = newNode(8);
+    cout << "Given linked list\n";
+    printlist(head1);
+    reverse(&head1);
+    cout << "\nReversed linked list\n";
+    printlist(head1);
     return 0;
 }
-    
-

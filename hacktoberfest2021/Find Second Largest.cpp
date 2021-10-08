@@ -1,16 +1,26 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
-
-int main(){
-    int ma=INT_MIN;
-    vector<int> A;
-    for(int i=0;i<3;i++){
-        int temp;
-        cin>>temp;
-        A.push_back(temp);
+int main ()
+{
+    int A[10], n, i, j, x;
+    cout << "Enter size of array : ";
+    cin >> n;
+    cout << "Enter elements of array : ";
+    for (i = 0; i < n; i++)
+        cin >> A[i];    
+    for (i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (A[i] < A[j])
+            {
+                x = A[i];
+                A[i] = A[j];
+                A[j] = x;
+            }
+        }
     }
-    sort(A.begin(),A.end());
-    sort(A.begin(),A.end());
-    cout<<A[1]<<endl;
+    cout << "Second largest number : " << A[1];
+    
     return 0;
 }

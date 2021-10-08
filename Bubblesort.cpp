@@ -1,48 +1,30 @@
-// algorithm for bubble sort
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-void bubbleSort(int arr[], int n)
+int main()
 {
-    for (int i = 0; i < n; i++)
+    int n, i, arr[50], j, temp;
+    cout<<"Enter the Size (max. 50): ";
+    cin>>n;
+    cout<<"Enter "<<n<<" Numbers: ";
+    for(i=0; i<n; i++)
+        cin>>arr[i];
+    cout<<"\nSorting the Array using Bubble Sort\n";
+    for(i=0; i<(n-1); i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for(j=0; j<(n-i-1); j++)
         {
-            //last i elements are already in place 
-            if (arr[j] > arr[j + 1])
+            if(arr[j]>arr[j+1])
             {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
             }
         }
     }
-}
-
-void printArray(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-        cout << arr[i] << " ";
-    cout << endl;
-}
-
-
-int main()
-{
-    int arr[10] = {}, n, key;
-    cout << "Enter the number of elements in array: ";
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-    bubbleSort(arr, n);
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << ", ";
-    }
-
+    cout<<"\nArray Sorted Successfully!\n";
+    cout<<"\nThe New Array is: \n";
+    for(i=0; i<n; i++)
+        cout<<arr[i]<<" ";
+    cout<<endl;
     return 0;
 }
