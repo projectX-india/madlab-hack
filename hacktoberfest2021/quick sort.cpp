@@ -1,61 +1,66 @@
-// Quick sort in C++
 
-#include<iostream>
-#include<cstdlib>
-
+#include <iostream>
 using namespace std;
 
-void swap(int *a, int *b) {
-   int temp;
-   temp = *a;
-   *a = *b;
-   *b = temp;
+void swap(int *i, int *j)
+{
+    int temp = *i;
+    *i = *j;
+    *j = temp;
 }
 
-int Partition(int a[], int l, int h) {
-   int pivot, index, i;
-   index = l;
-   pivot = h;
-   for(i = l; i < h; i++) {
-      if(a[i] < a[pivot]) {
-         swap(&a[i], &a[index]);
-         index++;
-      }
-   }
-   swap(&a[pivot], &a[index]);
-   return index;
+int partision(int arr[], int l, int h)
+{
+
+    int pivot = arr[h];
+    int i = l - 1;
+
+    for (int j = l; j < h; j++)
+    {
+        if (arr[j] < pivot)
+        {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+
+    swap(&arr[i + 1], &arr[h]);
+    return (i + 1);
 }
 
-int RandomPivotPartition(int a[], int l, int h) {
-   int pvt, n, temp;
-   n = rand();
-   pvt = l + n%(h-l+1);
-   swap(&a[h], &a[pvt]);
-   return Partition(a, l, h);
+void quicksort(int arr[], int l, int h)
+{
+
+    if (l < h)
+    {
+        int pi = partision(arr, l, h);
+
+        quicksort(arr, l, pi - 1);
+        quicksort(arr, pi + 1, h);
+    }
 }
 
-int QuickSort(int a[], int l, int h) {
-   int pindex;
-   if(l < h) {
-      pindex = RandomPivotPartition(a, l, h);
-      QuickSort(a, l, pindex-1);
-      QuickSort(a, pindex+1, h);
-   }
-   return 0;
+void display(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
 }
 
-int main() {
-   int n, i;
-   cout<<"\nEnter the number of data element to be sorted: ";
-   cin>>n;
-   int arr[n];
-   for(i = 0; i < n; i++) {
-      cout<<"Enter element "<<i+1<<": ";
-      cin>>arr[i];
-   }
-   QuickSort(arr, 0, n-1);
-   cout<<"\nSorted Data ";
-   for (i = 0; i < n; i++)
-      cout<<"->"<<arr[i];
-   return 0;
+int main()
+{
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter elements:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    cout << "Array before Sorting: ";
+    display(arr, n);
+    quicksort(arr, 0, n - 1);
+    cout << "Array after Sorting: ";
+    display(arr, n);
 }
