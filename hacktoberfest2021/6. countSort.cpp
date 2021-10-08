@@ -1,38 +1,49 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-void countSort(vector<int>& arr)
-{
-    int max = *max_element(arr.begin(), arr.end());
-    int min = *min_element(arr.begin(), arr.end());
-    int range = max - min + 1;
- 
-    vector<int> count(range), output(arr.size());
-    for (int i = 0; i < arr.size(); i++)
-        count[arr[i] - min]++;
- 
-    for (int i = 1; i < count.size(); i++)
-        count[i] += count[i - 1];
- 
-    for (int i = arr.size() - 1; i >= 0; i--) {
-        output[count[arr[i] - min] - 1] = arr[i];
-        count[arr[i] - min]--;
-    }
- 
-    for (int i = 0; i < arr.size(); i++)
-        arr[i] = output[i];
+
+void countSort(int arr[], int n) {
+  
+  int arr1[10];
+  int count_arr[10];
+  int x = arr[0];
+
+  for (int i = 1; i < n; i++) {
+    if (arr[i] > x)
+      x = arr[i];
+  }
+
+  for (int i = 0; i <= x; ++i) {
+    count_arr[i] = 0;
+  }
+
+  for (int i = 0; i < n; i++) {
+    count_arr[arr[i]]++;
+  }
+
+  for (int i = 1; i <= x; i++) {
+    count_arr[i] += count_arr[i - 1];
+  }
+
+
+  for (int i = n - 1; i >= 0; i--) {
+    arr1[count_arr[arr[i]] - 1] = arr[i];
+    count_arr[arr[i]]--;
+  }
+
+  for (int i = 0; i < n; i++) {
+    arr[i] = arr1[i];
+  }
 }
- 
-void printArray(vector<int>& arr)
-{
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
-    cout << "\n";
+
+void display(int arr[], int n) {
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
+  cout << endl;
 }
- 
-int main()
-{
-    vector<int> arr = { -5, -10, 0, -3, 8, 5, -1, 10 };
-    countSort(arr);
-    printArray(arr);
-    return 0;
+
+int main() {
+  int arr[] = {4, 2, 2, 8, 3, 3, 1};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  countSort(arr, n);
+  display(arr, n);
 }
