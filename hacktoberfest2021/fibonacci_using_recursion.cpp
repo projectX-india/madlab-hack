@@ -1,29 +1,21 @@
 #include<iostream>
 using namespace std;
 
-/*
-Task:
-1. WAP tp print fibonacci series till n using recursion
-*/
-
-int fib(int n)
-{
-    if (n <= 1)
-    {
+int fib(int n){
+    if (n <= 1){
         return n;
     }
-    else
-    {
+    else{
         return fib(n - 1) + fib(n - 2);
     }
 }
 
 int main()
 {
-    int num, f;
-    cout << "Enter the number" << endl;
-    cin >> num;
-    f = fib(num);
-    cout << f << endl;
+    int n, fi;
+    cout << "Add Numbers : ";
+    cin >> n;
+    fi= fib(n);
+    cout << fi << endl;
     return 0;
 }
