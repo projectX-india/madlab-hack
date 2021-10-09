@@ -30,7 +30,7 @@ if __name__ == "__main__":
     for match_id, start, end in matches:
         string_id = nlp.vocab.strings[match_id]
         span = doc[start:end]
-        #print(span.text)
+        print(span.text)
         task_list.append(span.text)
     print(task_list)
     task_list.sort()
