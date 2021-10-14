@@ -1,14 +1,5 @@
 
 #include <iostream>
-#include <list>
-using namespace std;
-
-int main()
-{
-    list<int> linkedList;
-    for (int i = 0; i < 5; i++)
-
-#include<iostream>
 using namespace std;
 
 /*
@@ -16,48 +7,32 @@ Task:
 1. implement a linked list and print it
 */
 
-class linked_list
-{
-    public:
-    int data;
-    linked_list *next;
+struct Node {
+   int data;
+   struct Node *next;
 };
-
-linked_list *insert_at_beginning(linked_list *head , int x)
-{
-    linked_list *nn = new linked_list;
-    nn->data = x;
-    nn->next = NULL;
-    if(head==NULL)
-    {
-        head = nn;
-    }
-    else
-    {
-        nn->next = head;
-        head = nn;
-    }
-    return head;
+struct Node* head = NULL;
+void insert(int new_data) {
+   struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+   new_node->data = new_data;
+   new_node->next = head;
+   head = new_node;
 }
-    
-void display(linked_list *head)
-{
-    linked_list *ptr = head;
-    while(ptr!=NULL)
-    {
-        cout<<ptr->data<<" ";
-        ptr = ptr->next;
-    }
+void display() {
+   struct Node* ptr;
+   ptr = head;
+   while (ptr != NULL) {
+      cout<< ptr->data <<" ";
+      ptr = ptr->next;
+   }
 }
-    
-int main()
-{
-    linked_list *first = NULL;
-    first = insert_at_beginning(fisrt , 10);
-    first = insert_at_beginning(fisrt , 20);
-    first = insert_at_beginning(fisrt , 30);
-    first = insert_at_beginning(fisrt , 50);
-    first = insert_at_beginning(fisrt , 60);
-    display(first);
-    return 0;
+int main() {
+   insert(3);
+   insert(1);
+   insert(7);
+   insert(2);
+   insert(9);
+   cout<<"The linked list is: ";
+   display();
+   return 0;
 }
