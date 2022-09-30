@@ -23,6 +23,13 @@ void swap(Point &p1, Point &p2)
     p2 = temp;
 }
 
+void swap22(Point &pi7, Point &pi9)
+{
+    Point temp = pi7;
+    pi7 = pi9;
+    pi9 = temp;
+}
+
 int distSq(Point p1, Point p2)
 {
     return (p1.x - p2.x) * (p1.x - p2.x) +
