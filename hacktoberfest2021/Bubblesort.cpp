@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+// MUJHE TSHIRT DEDO
 int main()
 {
     int n, i, arr[50], j, temp;
