@@ -7,6 +7,22 @@
 #define FastIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 using namespace std;
 
+int fib(int coff)
+{
+    if(coff == 0)
+    {
+        return 0;
+    }
+    else if(coff == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return fib(coff - 1) + fib(coff - 2);
+    }
+}
+
 void solve() {
     int n, m;
     cin >> n >> m;
