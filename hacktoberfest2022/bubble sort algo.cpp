@@ -18,6 +18,15 @@ void bubblesort(int arr[], int n)
                 swap(arr[j], arr[j+1]);
         }
 }
+//This functions returns the maximum element in the array
+void returnMax(){
+  return arr[n];
+
+}
+//This function returns the minimum element in the array
+void returnMin(){
+    return arr[0];
+}
 int main()
 {
     int n;
@@ -27,6 +36,8 @@ int main()
         cin>>arr[i];
     
     bubblesort(arr, n);
+    returnMax();
+    returnMin();
     
     for(int i=0;i<n;i++)
         cout<<arr[i]<<" ";
