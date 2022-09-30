@@ -13,6 +13,7 @@ int balancedBTs(int h) {
     long b=balancedBTs(h-2);
     return a*(a+2*b)%z;
 }
+//helllo
 int main() {
     int h;
     cin >> h;
