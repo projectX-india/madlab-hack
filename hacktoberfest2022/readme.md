@@ -14,7 +14,7 @@
 
 Happy Hacktober! :octocat: This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
 
-<!-- ![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberlogo.png) -->
+![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberfest-banner2022.jpeg)
 
 ### Instructions
 1. register yourself on the link below with your github ID at https://hacktoberfest.digitalocean.com/
