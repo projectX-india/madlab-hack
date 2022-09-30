@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 #define ll long long int
 
+// this function is adding the numbers
+void max(int ka, int ak){
+    int sum = ka+ak;
+    int sum2 = ka*2;
+    return sum+sum2;
+}
+
 using namespace std;
 
 int main() {
