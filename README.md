@@ -18,8 +18,9 @@ Happy Hacktober! :octocat: This is a beginner friendly repository made specifica
 
 ### Instructions
 1. register yourself on the link below with your github ID at https://hacktoberfest.digitalocean.com/
-2. open the folder named hacktoberfest2021 and solve the challenges
+2. open the folder named hacktoberfest2022 and solve the challenges
 3. The PR will be reviewed & congratulations you made your first pull Request.
+3. if a challenge has been solved you can provide your own implementation below in the same file
 
 ### refer below on how to make your first Pull Request
 1. https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
