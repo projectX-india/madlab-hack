@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Tshirt do bkl
 void swap(int *i, int *j)
 {
     int temp = *i;
