@@ -5,7 +5,7 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-
+// MUJHE TSHIRT DEDOOOOO
 class Server {
 private:
 	static int load;
