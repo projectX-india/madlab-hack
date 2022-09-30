@@ -6,6 +6,13 @@ int max(int a, int b)
     return (a>b) ? a:b;
 }
 
+void mx2(int num1, int num2){
+    if(num1>num2){
+        return num1;}
+    else{
+        return num2;}
+}
+
 int power(int num,int ind)
 {
     if(ind==0)
@@ -21,6 +28,7 @@ int *split(int num,int mid)
     array[1]=num%power(10,mid);
     return array;
 }
+
 
 
 int cntdigit(int num)
