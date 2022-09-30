@@ -2,6 +2,10 @@ import spacy
 import re
 from spacy.matcher import Matcher
 
+#this is a random funtion for comapring the numbers
+def itsfun(num1, num2):
+  return num1>num2
+
 if __name__ == "__main__":
     #Sanial execute this work by 4pm
     #Sanial finish this work by 4pm
