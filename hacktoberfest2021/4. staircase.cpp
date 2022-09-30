@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 long staircase(int n)
+	//hello again
 {
 	//Write your code here
     long a[n+1];
