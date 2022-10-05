@@ -10,10 +10,10 @@ using namespace std;
 
 int main()
 {
-    int arr[]={1,-3,2,1,-1};
+    int array[]={-1,3,-2,1,1,6,8};
     int x=2;
-    int n=5;
-    sort(arr,arr+5);
+    int n=7;
+    sort(array,array+7);
     
     int low=0,high=n-1;
     int mid;
@@ -21,14 +21,14 @@ int main()
     {
         mid=(low+high)/2;
 //        cout<<mid<<endl;
-        if(arr[mid]==x)
+        if(array[mid]==x)
         {
             cout<<"foundat "<<mid+1<<endl;
             break;
         }
         else
         {
-            if(x>arr[mid])
+            if(x>array[mid])
                 low=mid+1;
             else
                 high=mid-1;
