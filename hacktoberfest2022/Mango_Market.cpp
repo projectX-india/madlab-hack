@@ -6,7 +6,7 @@
 #define frr(i, a, b) for (int i = a; i >= b; i--)
 #define FastIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 using namespace std;
-
+//this is a code for Mango marget that is on the coding platforms
 void solve() {
     int n, m;
     cin >> n >> m;
