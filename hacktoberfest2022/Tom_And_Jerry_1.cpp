@@ -7,7 +7,7 @@
 #define rf(i, a, b) for (int i = a; i >= b; i--)
 #define FastIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 using namespace std;
-
+//CODE FOR TOM AND JERRY ON CODING PLATFORM
 void solve()
 {
     int a, b, c, d, k;
