@@ -2,6 +2,7 @@
 using namespace std;
 #define MAX 10000
 #define ll long long 
+//This is a code for minimum_extraction 
 int main() {
     int tt;
     cin>>tt;
