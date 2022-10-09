@@ -6,7 +6,7 @@
 #define frr(i, a, b) for (int i = a; i >= b; i--)
 #define FastIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 using namespace std;
-
+//this can reverse the string or the number by this we can check the palindrome also
 void solve() {
     int n, k;
     cin >> n >> k;
