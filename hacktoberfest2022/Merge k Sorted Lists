@@ -1,42 +1,45 @@
-ListNode* mergeKLists(vector<ListNode*>& lists) {
-        int n=lists.size();
-        if(n==0)
-            return NULL;
-        ListNode *head=lists[0];
-        for(int i=1;i<n;i++)
-            head=mergeTwoLists(head,lists[i]);
-        return head;
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class cmp {
+public:
+    bool operator()(ListNode * l1, ListNode * l2)
+    {
+        return l1->val > l2->val;
     }
-    
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        ListNode *ptr1=l1;
-        ListNode *ptr2=l2;
-        if(ptr1==NULL&&ptr2==NULL)
-            return NULL;
-        if(ptr1==NULL)
-            return l2;
-        if(ptr2==NULL)
-            return l1;
-        ListNode *h=new ListNode(0);
-        ListNode *temp=h;
-        while(ptr1!=NULL&&ptr2!=NULL)
+};
+
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        
+        priority_queue<ListNode*,vector<ListNode*>,cmp> pq;
+        int len=lists.size();
+        
+        for(int i = 0; i < len; i++)
+            if(lists[i] != NULL)
+                pq.push(lists[i]);
+        
+        ListNode* sol = new ListNode();
+        ListNode* curr = sol;
+        
+        while (!pq.empty())
         {
-            if(ptr1->val<=ptr2->val)
-            {
-                temp->next=ptr1;
-                temp=temp->next;
-                ptr1=ptr1->next;
-            }
-            else if(ptr2->val<ptr1->val)
-            {
-                temp->next=ptr2;
-                temp=temp->next;
-                ptr2=ptr2->next;
-            }
-            if(ptr1==NULL)
-                temp->next=ptr2;
-            if(ptr2==NULL)
-                temp->next=ptr1;
-        }
-        return h->next;
+            curr->next = pq.top();
+            curr = curr->next;
+            pq.pop();
+            if(curr->next != NULL)
+                pq.push(curr->next);
+        }    
+        if(sol != NULL)
+            sol = sol->next;
+        return sol;   
     }
+};
