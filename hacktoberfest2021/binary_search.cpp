@@ -1,98 +1,37 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
-
-class node{
-public:
-	int data;
-	node* left;
-	node* right;
-
-	node(int d){
-		data = d;
-		left = NULL;
-		right = NULL;
-	}
-};
-
-node* insertInBST(node* root, int d)
-{
-	if(root == NULL)
-		return new node(d);
-
-	if(d > root -> data)
-		root -> right = insertInBST(root -> right, d);
-	else
-		root -> left = insertInBST(root -> left, d);
-
-	return root;
+int binarySearch(int arr[], int p, int r, int num) {
+   if (p <= r) {
+      int mid = (p + r)/2;
+      if (arr[mid] == num)
+         return mid ;
+      if (arr[mid] > num)
+         return binarySearch(arr, p, mid-1, num);
+      if (arr[mid] < num)
+         return binarySearch(arr, mid+1, r, num);
+   }
+   return -1;
 }
-
-node* buildBST()
-{
-	int d;
-	cin >> d;
-	
-	node* root = NULL;
-
-	while(d != -1)
-	{
-		root = insertInBST(root, d);
-		cin>>d;
-	}
-	return root;
-}
-
-void bfsNewline(node* root)
-{
-	queue<node*> q;
-	q.push(root);
-	q.push(NULL);
-	while(!q.empty())
-	{
-		node* f = q.front();
-		if(f == NULL)
-		{
-			cout<<"\n";
-			q.pop();
-			if(!q.empty())
-				q.push(NULL);
-		}
-		else
-		{
-			cout<<f -> data<<", ";
-			q.pop();
-
-			if(f -> left)
-				q.push(f -> left);
-			if(f -> right)
-				q.push(f -> right);
-		}
-	}
-	return;
-}
-
-void inorderPrint(node* root)
-{
-	if(root == NULL)
-		return;
-	inorderPrint(root -> left);
-	cout<<root->data<<", ";
-	inorderPrint(root -> right);
-}
-
-istream& operator>>(istream &is, node*&root)
-{
-	root = buildBST();
-	return is;
-}
-
-int main()
-{
-	// node* ROOT = buildBST();
-	node* ROOT = NULL;
-	cin>>ROOT;
-	inorderPrint(ROOT);
-	cout<<"\n\n";
-	bfsNewline(ROOT);
-	return 0;
+int main() {
+   int i,n,num;
+   cout<<"enter number of elements";
+   cin>>n;
+   int arr[n];
+    cout<<"enter the element of array";
+   for(i=0;i<n;i++)
+    {
+       
+        cin>>arr[i];
+    }
+   
+  
+   cout << "Enter the number to search: \n";
+   cin >> num;
+   int index = binarySearch (arr, 0, n-1, num);
+   if(index == -1){
+      cout<< num <<" is not present in the array";
+   }else{
+      cout<< num <<" is present at index "<< index <<" in the array";
+   }
+   return 0;
 }

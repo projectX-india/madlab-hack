@@ -1,0 +1,36 @@
+class Solution {
+public:
+// DYNAMIC PROGRAMMING PROBLEM
+// update three sum
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        unordered_map<int, unordered_map<int, unordered_map<int, int>>> dp;
+        vector<vector<int>> ans;
+        for(int i = 0; i < nums.size(); i++) {
+            int target = -1 * nums[i];
+            int start = i + 1;
+            int end = nums.size() - 1;
+            while(start < end) {
+                if(nums[start] + nums[end] == target) {
+                    if(dp[nums[i]][nums[start]][nums[end]] != 1 && dp[nums[start]][nums[i]][nums[end]] != 1 && dp[nums[start]][nums[end]][nums[i]] != 1 && dp[nums[i]][nums[end]][nums[start]] != 1 && dp[nums[end]][nums[start]][nums[i]] != 1 && dp[nums[i]][nums[end]][nums[start]] != 1) {
+                        vector<int> v = {nums[i], nums[start], nums[end]};
+                        dp[nums[i]][nums[start]][nums[end]] = 1;
+                        dp[nums[start]][nums[i]][nums[end]] = 1;
+                        dp[nums[start]][nums[end]][nums[i]] = 1;
+                        dp[nums[i]][nums[end]][nums[start]] = 1;
+                        dp[nums[end]][nums[start]][nums[i]] = 1;
+                        dp[nums[i]][nums[end]][nums[start]] = 1;
+                        ans.push_back(v);
+                    }
+                    start++;
+                    end--;
+                } else if(nums[start] + nums[end] < target) {
+                    start++;
+                } else {
+                    end--;
+                }
+            }
+        }
+        return ans;
+    }
+};

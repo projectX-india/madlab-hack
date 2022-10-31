@@ -1,71 +1,90 @@
-int matrix[25][25], visited_cities[10], limit, cost = 0;
+//  C++ program for the above approach
+#include <bits/stdc++.h>
+using namespace std;
  
-int tsp(int c)
+// Function to find the minimum
+// cost path for all the paths
+void findMinRoute(vector<vector<int> > tsp)
 {
- int count, nearest_city = 999;
- int minimum = 999, temp;
- for(count = 0; count < limit; count++)
- {
- if((matrix[c][count] != 0) && (visited_cities[count] == 0))
- {
- if(matrix[c][count] < minimum)
- {
- minimum = matrix[count][0] + matrix[c][count];
- }
- temp = matrix[c][count];
- nearest_city = count;
- }
- }
- if(minimum != 999)
- {
- cost = cost + temp;
- }
- return nearest_city;
+    int sum = 0;
+    int counter = 0;
+    int j = 0, i = 0;
+    int min = INT_MAX;
+    map<int, int> visitedRouteList;
+ 
+    // Starting from the 0th indexed
+    // city i.e., the first city
+    visitedRouteList[0] = 1;
+    int route[tsp.size()];
+ 
+    // Traverse the adjacency
+    // matrix tsp[][]
+    while (i < tsp.size() && j < tsp[i].size())
+    {
+ 
+        // Corner of the Matrix
+        if (counter >= tsp[i].size() - 1)
+        {
+            break;
+        }
+ 
+        // If this path is unvisited then
+        // and if the cost is less then
+        // update the cost
+        if (j != i && (visitedRouteList[j] == 0))
+        {
+            if (tsp[i][j] < min)
+            {
+                min = tsp[i][j];
+                route[counter] = j + 1;
+            }
+        }
+        j++;
+ 
+        // Check all paths from the
+        // ith indexed city
+        if (j == tsp[i].size())
+        {
+            sum += min;
+            min = INT_MAX;
+            visitedRouteList[route[counter] - 1] = 1;
+            j = 0;
+            i = route[counter] - 1;
+            counter++;
+        }
+    }
+ 
+    // Update the ending city in array
+    // from city which was last visited
+    i = route[counter - 1] - 1;
+ 
+    for (j = 0; j < tsp.size(); j++)
+    {
+ 
+        if ((i != j) && tsp[i][j] < min)
+        {
+            min = tsp[i][j];
+            route[counter] = j + 1;
+        }
+    }
+    sum += min;
+ 
+    // Started from the node where
+    // we finished as well.
+    cout << ("Minimum Cost is : ");
+    cout << (sum);
 }
  
-void minimum_cost(int city)
-{
- int nearest_city;
- visited_cities[city] = 1;
- printf("%d ", city + 1);
- nearest_city = tsp(city);
- if(nearest_city == 999)
- {
- nearest_city = 0;
- printf("%d", nearest_city + 1);
- cost = cost + matrix[city][nearest_city];
- return;
- }
- minimum_cost(nearest_city);
-}
- 
+// Driver Code
 int main()
-{ 
- int i, j;
- printf("Enter Total Number of Cities:\t");
- scanf("%d", &limit);
- printf("\nEnter Cost Matrix\n");
- for(i = 0; i < limit; i++)
- {
- printf("\nEnter %d Elements in Row[%d]\n", limit, i + 1);
- for(j = 0; j < limit; j++)
- {
- scanf("%d", &matrix[i][j]);
- }
- visited_cities[i] = 0;
- }
- printf("\nEntered Cost Matrix\n");
- for(i = 0; i < limit; i++)
- {
- printf("\n");
- for(j = 0; j < limit; j++)
- {
- printf("%d ", matrix[i][j]);
- }
- }
- printf("\n\nPath:\t");
- minimum_cost(0);
- printf("\n\nMinimum Cost: \t");
- printf("%d\n", cost);
- return 0;
+{
+   
+    // Input Matrix
+    vector<vector<int> > tsp = { { -1, 10, 15, 20 },
+                                 { 10, -1, 35, 25 },
+                                 { 15, 35, -1, 30 },
+                                 { 20, 25, 30, -1 } };
+ 
+    // Function Call
+    findMinRoute(tsp);
 }

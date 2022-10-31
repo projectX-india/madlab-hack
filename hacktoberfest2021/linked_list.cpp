@@ -1,14 +1,5 @@
 
 #include <iostream>
-#include <list>
-using namespace std;
-
-int main()
-{
-    list<int> linkedList;
-    for (int i = 0; i < 5; i++)
-
-#include<iostream>
 using namespace std;
 
 /*
@@ -16,58 +7,32 @@ Task:
 1. implement a linked list and print it
 */
 
-class node
-{
-    public:
-    int data;
-    node* next;
+struct Node {
+   int data;
+   struct Node *next;
 };
-node*head=NULL;
-
-node* insertion(node* head,int data)
-{
-    node* nnode=new node;
-    nnode->data=data;
-    node*temp=head;
-    if(head==NULL)
-
-    {
-        head=nnode;
-        nnode->next=NULL;
-    }
-    else
-    {
-        while(temp->next!=NULL)
-        temp=temp->next;
-        temp->next=nnode;
-        nnode->next=NULL;
-    }
-    return head;
+struct Node* head = NULL;
+void insert(int new_data) {
+   struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+   new_node->data = new_data;
+   new_node->next = head;
+   head = new_node;
 }
-
-
-node* display(node*head)
-{
-    node* temp=head;
-    while(temp!=NULL)
-    {
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
-    cout<<endl;
-    return head;
+void display() {
+   struct Node* ptr;
+   ptr = head;
+   while (ptr != NULL) {
+      cout<< ptr->data <<" ";
+      ptr = ptr->next;
+   }
 }
-
-        
-
-int main(){
-    head=insertion(head,10);
-    head=insertion(head,60);
-    head=insertion(head,20);
-    head=insertion(head,40);
-    head=insertion(head,50);
-    head=insertion(head,30);
-    head=display(head);
-
-    return 0;
+int main() {
+   insert(3);
+   insert(1);
+   insert(7);
+   insert(2);
+   insert(9);
+   cout<<"The linked list is: ";
+   display();
+   return 0;
 }

@@ -10,16 +10,17 @@
 
 <p>&nbsp;</p>
 
-# Hacktoberfest 2021 
+# Hacktoberfest 2022 
 
 Happy Hacktober! :octocat: This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
 
-![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberlogo.png)
+![1](https://github.com/phoenix-aditya/madlab-hack/blob/master/assets/hacktoberfest-banner2022.jpeg)
 
 ### Instructions
 1. register yourself on the link below with your github ID at https://hacktoberfest.digitalocean.com/
-2. open the folder named hacktoberfest2021 and solve the challenges
+2. open the folder named hacktoberfest2022 and solve the challenges
 3. The PR will be reviewed & congratulations you made your first pull Request.
+3. if a challenge has been solved you can provide your own implementation below in the same file
 
 ### refer below on how to make your first Pull Request
 1. https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github

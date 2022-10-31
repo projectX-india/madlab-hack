@@ -1,17 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-/*
-Task:
-1. WAP tp print fibonacci series till n using recursion
-*/
-void fibonacci(int n){
-   if (n <= 1)
-        return n;
-    return fib(n-1) + fib(n-2);
-    
+int fib(int x) 
+{
+   if((x==1)||(x==0))
+   {
+      return(x);
+   }
+    else
+   {
+      return(fib(x-1)+fib(x-2));
+   }
 }
-int main(){
-    fibonacci(10);
-    return 0;
+int main() {
+   int x , i=0;
+   cout << "Enter the number of terms of series : ";
+   cin >> x;
+   cout << "\nFibonnaci Series : ";
+   while(i < x) {
+      cout << " " << fib(i);
+      i++;
+   }
+   return 0;
 }

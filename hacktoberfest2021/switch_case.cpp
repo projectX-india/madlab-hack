@@ -1,26 +1,36 @@
 #include<iostream>
 using namespace std;
 
-/*
-Task:
-1. implement switch case in c++
-*/
+// Task : Implement switch case 
 
-int main(){
-int test = 3;
-switch (test) {
-  case 1:
-    cout << "Monday";
-    break;
-  case 2:
-    cout << "Tuesday";
-    break;
-  case 3:
-    cout << "Wednesday";
-    break;
-}
-    
-    
+//switch-case example
+
+int main() {
+    char oper;
+    float num1, num2;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> oper;
+    cout << "Enter two numbers: " << endl;
+    cin >> num1 >> num2;
+
+    switch (oper) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2;
+            break;
+        case '/':
+            cout << num1 << " / " << num2 << " = " << num1 / num2;
+            break;
+        default:
+            // operator is doesn't match any case constant (+, -, *, /)
+            cout << "Error! The operator is not correct";
+            break;
+    }
 
     return 0;
 }
