@@ -17,7 +17,7 @@ Constraints
 
 
 
-//Solution
+//Solution for the problem
 #include <iostream>
 using namespace std;
 int main()

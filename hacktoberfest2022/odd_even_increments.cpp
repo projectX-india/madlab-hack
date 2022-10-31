@@ -1,7 +1,14 @@
 #include<bits/stdc++.h>
 #define ll long long
 using namespace std;
- 
+
+//this is the main function which can be deleted
+void mx(){
+ int n;
+ int m;
+ int s = n+m
+}
+
 void solve() {
    ll n;
     cin>>n; 
