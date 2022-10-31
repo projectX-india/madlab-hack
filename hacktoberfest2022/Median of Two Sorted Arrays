@@ -1,0 +1,42 @@
+double findMedianSortedArrays(vector<int>& num1, vector<int>& num2) {
+        vector<int> v;
+        auto it1=num1.begin();
+        auto it2=num2.begin();
+        while(it1!=num1.end() && it2!=num2.end())
+        {
+            if(*it1<*it2)
+            {
+                v.push_back(*it1);
+                // cout<<*it1;
+                it1++;
+            }
+            else if(*it2<=*it1)
+            {
+                v.push_back(*it2);
+                // cout<<*it2;
+                it2++;
+            }
+            
+        }
+        while(it1!=num1.end())
+        {
+            v.push_back(*it1);
+            it1++;
+        }
+        while(it2!=num2.end())
+        {
+            v.push_back(*it2);
+            it2++;
+        }
+        int n=v.size()-1;
+        if(n%2==0)
+            return v.at(n/2);
+        else
+        {
+            n=v.size()/2-1;
+            // cout<<n;
+            double s=((double)((double)v.at(n)+(double)v.at(n+1))/2);
+            cout<<s;
+            return s;
+        }
+}
