@@ -10,32 +10,6 @@ using namespace std;
 
 int a, b;
 
-// bool isPresent(int n)
-// {
-//     if (n == 1)
-//         return true;
-//     bool x = false, y = false;
-//     if (n % a == 0 and a > 1)
-//         x = isPresent(n / a);
-//     if (x == true)
-//         return x;
-//     if (n - b >= 1)
-//         y = isPresent(n - b);
-//     return y;
-// }
-
-// void solve()
-// {
-//     int n;
-//     cin >> n >> a >> b;
-//     // cout << log(n) / log(a);
-//     // if ((n - 1) % b == 0 or (log(n) / log(a)) == 0)
-//     if (isPresent(n))
-//         cout << "Yes" << endl;
-//     else
-//         cout << "No" << endl;
-// }
-
 void solve()
 {
     int n;

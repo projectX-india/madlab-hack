@@ -3,29 +3,29 @@
 
 #include <iostream>
 using namespace std;
-int ssort(int a[], int n)
+int ssort(int array[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        int min = a[i], pos=i;
+        int minimum = array[i], position=i;
         for (int j = i + 1; j < n; j++)
         {
-            if (a[j] < min)
+            if (array[j] < minimum)
             {
-                pos = j;
-                min = a[j];
+                position = j;
+                minimum = array[j];
             }
         }
-        if (pos != 1)
+        if (position != 1)
         {
-            int temp = a[i];
-            a[i] = a[pos];
-            a[pos] = temp;
+            int temp = array[i];
+            array[i] = array[position];
+            array[position] = temp;
         }
     }
     for (int i = 0; i < n; i++)
     {
-        cout << a[i] << " ";
+        cout << array[i] << " ";
     }
 }
 int main()
