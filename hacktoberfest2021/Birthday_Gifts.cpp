@@ -26,7 +26,7 @@ void solve()
     second += a[2 * k];
     cout << max(first, second) << endl;
 }
-
+//THE MAIN FILE
 signed main()
 {
     FastIO;

@@ -1,0 +1,48 @@
+/*
+CodeChef Problem: XORNEY solution 
+https://www.codechef.com/problems/XORNEY
+
+Author: Shourya Gupta
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+        long long int l,r,sum=0;
+        cin>>l>>r;
+        if ((r-l+1)>2){
+            if((((l%2) != 0) && (r%2 == 0) && ((((r-l+1)/2)%2)!=0)) || (((l%2)==0) && (r%2!=0) &&  ((((r-l+1)/2)%2)!=0))){
+                cout<<"Odd \n";
+            }
+            else if((((l%2)!=0) && (r%2==0) &&  ((((r-l+1)/2)%2)==0)) || (((l%2)==0) && (r%2!=0) &&  ((((r-l+1)/2)%2)==0))){
+                cout<<"Even \n";
+            }
+            else if((((l%2)==0) && (r%2==0) &&  (((r-l+1+1)%4)!=0))){
+                cout<<"Even \n";
+            }
+            else if(((l%2)!=0) && (r%2!=0) &&  (((r-l+1+1)%4)==0)){
+                cout<<"Even \n";
+            }
+            else if(((l%2)==0) && (r%2==0) &&  (((r-l)%4)!=0)){
+                cout<<"Odd \n";
+            }
+            else if(((l%2)!=0) && (r%2!=0) &&  (((r-l)%4)==0)){
+                cout<<"Odd \n";
+            }
+        }
+        else if((r-l+1)==2)
+            cout<<"Odd \n";
+        else{
+            if((l%2)==0){
+                cout<<"Even \n";
+            }
+            else
+                cout<<"Odd \n";
+        }
+    }
+}
