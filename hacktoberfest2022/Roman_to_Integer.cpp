@@ -1,5 +1,6 @@
-class Solution {
-public:
+#include<bits/stdc++.h>
+using namespace std;
+
 int romanToInt(string s) {
     unordered_map<char,int> mp{
         {'I',1},
@@ -20,4 +21,9 @@ int romanToInt(string s) {
     return ans;
     
 }
-};
+
+int main(void){
+    string s;
+    cin>>s;
+    cout<<romanToInt(s);
+}
