@@ -6,6 +6,8 @@ using namespace std;
 void bubblesorting(int array[],int n);
 int main()
 {
+//cout>>n;
+//for (int i=0;i<n;i++)
 
     cin>>n;
     int array[n];
